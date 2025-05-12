@@ -1,22 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-nav a {
-    margin: 0 12px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
+.logo-wrapper {
+    height: 40px;
+    overflow: hidden;
 }
 
-nav a:hover,
-nav a.active {
-    color: #d67b00;
-}
-
-body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: #fafafa;
+.logo-wrapper img {
+    height: 60px;
+    width: auto;
 }
