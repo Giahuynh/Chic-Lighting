@@ -17,18 +17,25 @@
     <!-- Header -->
     <header class="w-full bg-white shadow-sm border-b">
         <div class="flex items-center justify-between w-full px-6 lg:px-24 py-3">
-            <!-- Logo + Menu -->
+            <!-- Logo + Brand name + Menu -->
             <div class="flex items-center space-x-8">
-                <div class="h-12 flex items-center">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="max-h-16 w-auto">
-                </div>
+                <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="max-h-10 w-auto">
+                    <span class="text-xl font-semibold text-gray-900 hover:text-blue-600">Chic Lighting</span>
+                </a>
                 <nav class="flex space-x-6 text-sm font-medium">
-                    <a href="{{ route('home') }}"
-                        class="{{ request()->routeIs('home') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">Home</a>
+                    {{-- Removed Home --}}
+
+
+                    <a href="{{ route('products.index') }}"
+                        class="flex items-center gap-1 {{ request()->routeIs('products.*') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">
+                        <i class="fas fa-bars"></i>
+                        Categories
+                    </a>
                     <a href="{{ route('about') }}"
                         class="{{ request()->routeIs('about') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">About</a>
-                    <a href="{{ route('products.index') }}"
-                        class="{{ request()->routeIs('products.*') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">Products</a>
+
+
                     <a href="{{ route('contact') }}"
                         class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">Contact</a>
                 </nav>
