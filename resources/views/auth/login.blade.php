@@ -52,24 +52,6 @@
                     </button>
                 </div>
 
-                <div class="text-center text-sm text-gray-500">
-                    or sign in with
-                </div>
-
-                <!-- social login -->
-                <div class="flex space-x-4">
-                    <button type="button"
-                        class="w-1/2 flex items-center justify-center gap-2 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-                        <i class="fab fa-facebook-f"></i>
-                        Facebook
-                    </button>
-                    <button type="button"
-                        class="w-1/2 flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">
-                        <i class="fab fa-google"></i>
-                        Google
-                    </button>
-                </div>
-
                 <!-- register prompt -->
                 <div class="text-center text-sm text-gray-600 pt-4 border-t border-gray-200">
                     Don’t have an account?

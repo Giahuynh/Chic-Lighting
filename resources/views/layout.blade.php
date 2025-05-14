@@ -20,24 +20,21 @@
             <!-- Logo + Brand name + Menu -->
             <div class="flex items-center space-x-8">
                 <a href="{{ route('home') }}" class="flex items-center space-x-2">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="max-h-10 w-auto">
-                    <span class="text-xl font-semibold text-gray-900 hover:text-blue-600">Chic Lighting</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="max-h-24 w-auto">
+                    <span class="text-xl font-semibold text-gray-900 hover:text-blue-600 font-serif">Chic Lighting</span>
                 </a>
                 <nav class="flex space-x-6 text-sm font-medium">
-                    {{-- Removed Home --}}
-
-
                     <a href="{{ route('products.index') }}"
-                        class="flex items-center gap-1 {{ request()->routeIs('products.*') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">
+                        class="flex items-center gap-1 {{ request()->routeIs('products.*') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }} font-serif">
                         <i class="fas fa-bars"></i>
                         Categories
                     </a>
                     <a href="{{ route('about') }}"
-                        class="{{ request()->routeIs('about') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">About</a>
+                        class="{{ request()->routeIs('about') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }} font-serif">About</a>
 
 
                     <a href="{{ route('contact') }}"
-                        class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }}">Contact</a>
+                        class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'text-gray-800 hover:text-blue-500' }} font-serif">Contact</a>
                 </nav>
             </div>
 
@@ -72,7 +69,7 @@
     </div>
 
     <!-- Content -->
-    <main class="w-full px-6 lg:px-24 py-12">
+    <main class="w-full h-full">
         @yield('content')
     </main>
 

@@ -19,6 +19,7 @@ Route::view('/contact', 'contact')->name('contact');
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 
 
+
 // 🟢 PUBLIC route: Products listing
 Route::get('products', [ProductController::class, 'index'])->name('products.index');
 
@@ -27,5 +28,5 @@ Route::get('products', [ProductController::class, 'index'])->name('products.inde
 Route::middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class)->except(['index']);
     Route::resource('brands', BrandController::class);
-    
+
 });
