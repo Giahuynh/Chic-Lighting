@@ -15,4 +15,3 @@ class AdminMiddleware
         return redirect('/')->with('error', 'Bạn không có quyền truy cập.');
     }
 }
-
