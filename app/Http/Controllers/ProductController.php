@@ -76,4 +76,9 @@ class ProductController extends Controller
         Product::destroy($id);
         return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
     }
+    public function shop() {
+    $products = Product::with('brand')->where('is_active', 1)->get();
+    return view('products.shop', compact('products'));
+}
+
 }
