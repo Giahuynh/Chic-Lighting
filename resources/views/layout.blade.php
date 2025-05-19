@@ -95,19 +95,6 @@
                 </div>
             </div>
 
-            <!-- Products -->
-            <div>
-                <h4 class="text-white font-semibold mb-4">PRODUCTS</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">Ceiling Lamps</a></li>
-                    <li><a href="#" class="hover:underline">Chandeliers</a></li>
-                    <li><a href="#" class="hover:underline">Desk Lamps</a></li>
-                    <li><a href="#" class="hover:underline">Floor Lamps</a></li>
-                    <li><a href="#" class="hover:underline">Wall Lamps</a></li>
-                    <li><a href="#" class="hover:underline">Track Lighting</a></li>
-                </ul>
-            </div>
-
             <!-- Contact -->
             <div>
                 <h4 class="text-white font-semibold mb-4">CONTACT</h4>
