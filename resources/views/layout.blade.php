@@ -7,7 +7,6 @@
     <title>Chic Lighting</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -47,26 +46,28 @@
         </div>
     </header>
     <!-- Login Popup Modal -->
-    <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
-        <div class="bg-white w-full max-w-sm rounded-lg shadow-lg p-6 relative modal-animate">
-            <!-- Close -->
-            <button onclick="toggleAuthModal()" class="absolute top-2 right-2">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="text-center">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold mb-2">Welcome to Chic Lighting</h3>
-                <p class="text-sm text-gray-500 mb-6">Please choose a login method</p>
-
-                <div class="flex space-x-4 justify-center">
-                    <a href="{{ route('register') }}"
-                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md text-sm">Register</a>
-                    <a href="{{ route('login') }}"
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Login</a>
-                </div>
+<div id="authModal"
+     class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-700">
+    <div id="authModalInner"
+         class="bg-white w-full max-w-sm rounded-xl shadow-xl p-6 relative opacity-0 scale-90 transition-all duration-700">
+        <!-- Close -->
+        <button onclick="toggleAuthModal()"
+                class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-lg">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="text-center">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-12 mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Welcome to Chic Lighting</h3>
+            <p class="text-sm text-gray-500 mb-6">Please choose a login method</p>
+            <div class="flex space-x-4 justify-center">
+                <a href="{{ route('register') }}"
+                   class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md text-sm">Register</a>
+                <a href="{{ route('login') }}"
+                   class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Login</a>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Content -->
     <main class="w-full h-full">

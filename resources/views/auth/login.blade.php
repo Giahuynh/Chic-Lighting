@@ -1,9 +1,10 @@
 @extends('layout')
 
 @section('content')
-    <div class="w-full min-h-screen flex items-center justify-center px-6 lg:px-24 py-12">
+    <div class="w-full min-h-screen flex items-center justify-center px-6 lg:px-24 py-12 bg-gray-100 transition-colors duration-700">
         <div
-            class="w-full max-w-md bg-white/40 backdrop-blur-lg rounded-xl p-8 space-y-6 shadow-sm transition-all duration-300">
+            class="w-full max-w-md bg-white/40 backdrop-blur-lg rounded-xl p-8 space-y-6 shadow-lg animate-fade-scale-in">
+
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-gray-900">Sign In to Your Account</h2>
                 <p class="text-sm text-gray-500 mt-2">Welcome back to Chic Lighting!</p>
@@ -39,8 +40,7 @@
 
                     @if (Route::has('password.request'))
                         <div class="text-sm">
-                            <a href="{{ route('password.request') }}" class="text-indigo-600 hover:text-indigo-500">Forgot
-                                password?</a>
+                            <a href="{{ route('password.request') }}" class="text-indigo-600 hover:text-indigo-500">Forgot password?</a>
                         </div>
                     @endif
                 </div>
@@ -52,7 +52,6 @@
                     </button>
                 </div>
 
-                <!-- register prompt -->
                 <div class="text-center text-sm text-gray-600 pt-4 border-t border-gray-200">
                     Don’t have an account?
                     <a href="{{ route('register') }}" class="text-indigo-600 hover:underline font-medium ml-1">
@@ -64,3 +63,4 @@
         </div>
     </div>
 @endsection
+

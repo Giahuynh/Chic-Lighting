@@ -1,30 +1,40 @@
 window.toggleAuthModal = function () {
     const path = window.location.pathname;
-    if (path === '/login' || path === '/register') return; // Không hiện popup khi đã vào login/register
+    if (path === '/login' || path === '/register') return;
 
     const modal = document.getElementById('authModal');
-    if (!modal) return;
+    const inner = document.getElementById('authModalInner');
 
-    const inner = modal.querySelector('.modal-animate');
+    if (!modal || !inner) return;
 
     if (modal.classList.contains('hidden')) {
-        // MỞ popup
+        // Hiện modal
         modal.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            modal.classList.add('opacity-100');
+            modal.classList.remove('opacity-0');
 
-        // Reset animation
-        if (inner) {
-            inner.style.animation = 'none';
-            void inner.offsetWidth; // trigger reflow
-            inner.style.animation = '';
-            inner.classList.add('modal-animate');
-        }
-
-        // Đóng khi click nền
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) modal.classList.add('hidden');
+            inner.classList.add('opacity-100', 'scale-100');
+            inner.classList.remove('opacity-0', 'scale-90');
         });
+
+        // Click ra ngoài thì tắt
+        const clickOutside = (e) => {
+            if (e.target === modal) toggleAuthModal();
+        };
+        modal.addEventListener('click', clickOutside, { once: true });
     } else {
-        // ĐÓNG popup
-        modal.classList.add('hidden');
+        // Ẩn modal
+        const modal = document.getElementById('authModal');
+        const inner = document.getElementById('authModalInner');
+
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        inner.classList.remove('opacity-100', 'scale-100');
+        inner.classList.add('opacity-0', 'scale-90');
+
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 700);
     }
 };
